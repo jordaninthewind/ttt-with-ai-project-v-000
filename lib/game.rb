@@ -37,21 +37,17 @@ WIN_COMBINATIONS = [
     end
   end
 
-  # def won?  # <<< --- WHY DOES THIS NOT WORK WITH "O"?
-  #   winning_combo = []
-  #   WIN_COMBINATIONS.each do | el |
-  #     if el.all? {|i| board.cells[i] == "O"}
-  #         # binding.pry
-  #         winning_combo << el
-  #         return winning_combo.flatten
-  #     elsif el.all? {|i| board.cells[i] == "X"}
-  #         # binding.pry
-  #         winning_combo << el
-  #         return winning_combo.flatten
-  #       end
-  #     end
-  #   !winning_combo.empty? && over?
-  # end
+  def won?  # <<< --- WHY DOES THIS NOT WORK WITH "O"?
+    winning_combo = []
+    WIN_COMBINATIONS.each do | el |
+      if el.all? {|i| board.cells[i] == "O"} || el.all? {|i| board.cells[i] == "X"}
+          # binding.pry
+          winning_combo << el
+          return winning_combo.flatten
+        end
+      end
+    !winning_combo.empty? && over?
+  end
 
   def draw?
     !won? && @board.full?
