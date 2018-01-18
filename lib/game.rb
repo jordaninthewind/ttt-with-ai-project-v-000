@@ -28,14 +28,14 @@ WIN_COMBINATIONS = [
     won? || draw?
   end
 
-  def won?
-    WIN_COMBINATIONS.detect do |el|
-      @board.cells[el[0]] == @board.cells[el[1]] &&
-      @board.cells[el[1]] == @board.cells[el[2]] &&
-      @board.taken?(el[0]+1)
-      # binding.pry
-    end
-  end
+  # def won?
+  #   WIN_COMBINATIONS.detect do |el|
+  #     @board.cells[el[0]] == @board.cells[el[1]] &&
+  #     @board.cells[el[1]] == @board.cells[el[2]] &&
+  #     @board.taken?(el[0]+1)
+  #     # binding.pry
+  #   end
+  # end
 
   def won?  # <<< --- WHY DOES THIS NOT WORK WITH "O"?
     winning_combo = []
