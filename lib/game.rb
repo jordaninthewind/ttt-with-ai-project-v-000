@@ -67,10 +67,10 @@ WIN_COMBINATIONS = [
 
     if won?
       puts "Congratulations #{winner}!"
-      self.play_again?
+      self.play_again? # If these are commented out, all tests pass.
     elsif draw?
       puts "Cat's Game!"
-      self.play_again?
+      self.play_again? # If these are commented out, all tests pass.
     end
   end
 
